@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-/*
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class ChiliFruitControllerTest {
@@ -21,7 +21,6 @@ class ChiliFruitControllerTest {
         mockMvc.perform(get("/api/chilifruits"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
-        // Add more assertions based on the expected response
     }
 
     @Test
@@ -34,4 +33,4 @@ class ChiliFruitControllerTest {
                         .content(String.valueOf(newQuantity)))
                 .andExpect(status().isOk());
     }
-}*/
+}

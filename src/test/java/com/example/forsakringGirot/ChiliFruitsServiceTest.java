@@ -1,7 +1,22 @@
 package com.example.forsakringGirot;
 
-/*
-class ChiliFruitServiceTest {
+
+import com.example.forsakringGirot.dataAccess.ChiliFruit;
+import com.example.forsakringGirot.repository.ChiliFruitRepository;
+import com.example.forsakringGirot.service.ChiliFruitService;
+import com.example.forsakringGirot.service.ChiliFruitServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import static org.mockito.Mockito.*;
+
+class ChiliFruitsServiceTest {
 
     private ChiliFruitService chiliFruitService;
 
@@ -41,4 +56,4 @@ class ChiliFruitServiceTest {
         // Verify that the quantity was updated correctly
         verify(chiliFruitRepository, times(1)).save(chiliFruit);
     }
-}*/
+}
