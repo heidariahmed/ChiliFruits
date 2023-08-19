@@ -1,6 +1,5 @@
 package com.example.forsakringGirot;
 
-
 import com.example.forsakringGirot.dataAccess.ChiliFruit;
 import com.example.forsakringGirot.repository.ChiliFruitRepository;
 import com.example.forsakringGirot.service.ChiliFruitService;
@@ -37,8 +36,6 @@ class ChiliFruitsServiceTest {
         when(chiliFruitRepository.findAll()).thenReturn(chiliFruits);
 
         List<ChiliFruit> result = chiliFruitService.getAllChiliFruits();
-
-        // Assert result based on expected chiliFruits list
     }
 
     @Test
