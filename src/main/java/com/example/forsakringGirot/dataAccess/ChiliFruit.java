@@ -75,5 +75,4 @@ public class ChiliFruit {
         this.quantity = quantity;
     }
 
-    // Add additional methods and logic as needed
 }
