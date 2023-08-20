@@ -40,7 +40,7 @@ class ChiliFruitsServiceTest {
 
     @Test
     void testUpdateQuantity() {
-        Long chiliFruitId = 1L;
+        int chiliFruitId = 1;
         int newQuantity = 50;
 
         ChiliFruit chiliFruit = new ChiliFruit();

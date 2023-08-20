@@ -8,5 +8,5 @@ public interface ChiliFruitService {
 
     List<ChiliFruit> getAllChiliFruits();
 
-    void updateQuantity(Long chiliFruitId, int newQuantity);
+    void updateQuantity(int chiliFruitId, int newQuantity);
 }

@@ -25,7 +25,7 @@ class ChiliFruitControllerTest {
 
     @Test
     void testUpdateQuantity() throws Exception {
-        Long chiliFruitId = 1L;
+        int chiliFruitId = 1;
         int newQuantity = 50;
 
         mockMvc.perform(post("/api/chilifruits/" + chiliFruitId + "/updateQuantity")

@@ -27,7 +27,7 @@ public class ChiliFruitController {
     }
 
     @PostMapping("/{id}/updateQuantity")
-    public ResponseEntity<String> updateQuantity(@PathVariable Long id, @RequestBody int newQuantity) {
+    public ResponseEntity<String> updateQuantity(@PathVariable  int id, @RequestBody int newQuantity) {
         try {
             chiliFruitService.updateQuantity(id, newQuantity);
             return ResponseEntity.ok("Quantity updated successfully.");

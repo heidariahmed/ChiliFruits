@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-    public interface ChiliFruitRepository extends JpaRepository<ChiliFruit, Long> {
+    public interface ChiliFruitRepository extends JpaRepository<ChiliFruit, Integer> {
     List<ChiliFruit> findByOrigin(String origin);
 }

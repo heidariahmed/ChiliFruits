@@ -24,7 +24,7 @@ public class ChiliFruitServiceImpl implements ChiliFruitService {
     }
 
     @Override
-    public void updateQuantity(Long chiliFruitId, int newQuantity) {
+    public void updateQuantity(int chiliFruitId, int newQuantity) {
         if (newQuantity < 0) {
             throw new IllegalArgumentException("Quantity cannot be negative.");
         }

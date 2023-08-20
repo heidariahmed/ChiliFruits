@@ -10,7 +10,7 @@ public class ChiliFruit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false)
     private String name;
@@ -27,11 +27,11 @@ public class ChiliFruit {
     @Column(nullable = false)
     private int quantity;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
