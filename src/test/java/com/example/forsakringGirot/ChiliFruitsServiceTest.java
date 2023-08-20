@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.*;
@@ -26,16 +24,6 @@ class ChiliFruitsServiceTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         chiliFruitService = new ChiliFruitServiceImpl(chiliFruitRepository);
-    }
-
-    @Test
-    void testGetAllChiliFruits() {
-        List<ChiliFruit> chiliFruits = new ArrayList<>();
-        // Populate chiliFruits list
-
-        when(chiliFruitRepository.findAll()).thenReturn(chiliFruits);
-
-        List<ChiliFruit> result = chiliFruitService.getAllChiliFruits();
     }
 
     @Test

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/chilifruits")
@@ -27,12 +28,15 @@ public class ChiliFruitController {
     }
 
     @PostMapping("/{id}/updateQuantity")
-    public ResponseEntity<String> updateQuantity(@PathVariable  int id, @RequestBody int newQuantity) {
+    public ResponseEntity<String> updateQuantity(@PathVariable int id, @RequestBody int newQuantity) {
         try {
             chiliFruitService.updateQuantity(id, newQuantity);
-            return ResponseEntity.ok("Quantity updated successfully.");
+            return ResponseEntity.ok("Quantity updated successfully");
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Chili fruit not found.");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+        catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
 }

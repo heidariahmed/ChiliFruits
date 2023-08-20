@@ -33,4 +33,34 @@ class ChiliFruitControllerTest {
                         .content(String.valueOf(newQuantity)))
                 .andExpect(status().isOk());
     }
+
+    @Test
+    void testUpdateQuantityWithBadData() throws Exception {
+        int chiliFruitId = 1;
+        int newQuantity = -50;
+
+        mockMvc.perform(post("/api/chilifruits/" + chiliFruitId + "/updateQuantity")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(String.valueOf(newQuantity)))
+                .andExpect(status().isBadRequest());
+    }
+    @Test
+    void testUpdateQuantityWithBadTyping() throws Exception {
+        int newQuantity = 50;
+
+        mockMvc.perform(post("/api/chilifruits/abc/updateQuantity")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(String.valueOf(newQuantity)))
+                .andExpect(status().isBadRequest());
+    }
+    @Test
+    void testUpdateQuantityWithBadId() throws Exception {
+        int chiliFruitId = 0;
+        int newQuantity = 50;
+
+        mockMvc.perform(post("/api/chilifruits/" + chiliFruitId + "/updateQuantity")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(String.valueOf(newQuantity)))
+                .andExpect(status().isNotFound());
+    }
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class ChiliFruitServiceImpl implements ChiliFruitService {
@@ -26,11 +27,11 @@ public class ChiliFruitServiceImpl implements ChiliFruitService {
     @Override
     public void updateQuantity(int chiliFruitId, int newQuantity) {
         if (newQuantity < 0) {
-            throw new IllegalArgumentException("Quantity cannot be negative.");
+            throw new IllegalArgumentException("Quantity cannot be negative");
         }
 
         ChiliFruit chiliFruit = chiliFruitRepository.findById(chiliFruitId)
-                .orElseThrow(() -> new IllegalArgumentException("Chili fruit not found"));
+                .orElseThrow(() -> new NoSuchElementException("Chili fruit not found"));
 
         chiliFruit.setQuantity(newQuantity);
         chiliFruitRepository.save(chiliFruit);
